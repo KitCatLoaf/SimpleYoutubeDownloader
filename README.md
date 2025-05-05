@@ -9,4 +9,5 @@ A very simple, lightweight, easy to use YouTube downloader that runs in your ter
 4. CD into directory
    
 Linux: Run "./downloader"
+
 Windows: Run "downloader.exe"
