@@ -3,7 +3,7 @@ A very simple, lightweight, easy to use YouTube downloader that runs in your ter
 
 
 # How to use:
-The program will create a new folder to store downloaded files, it will go in the programs root folder.
+The program will create a new folder to store downloaded files, it will go in the program's root folder.
 1. Download Python (Check add to PATH box)
 2. Use "pip install pytubefix"
 3. Download downloader.py
