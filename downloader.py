@@ -34,23 +34,23 @@ def Download(link, file_extension, output_path):
             print("Downloading single video...")
             youtubeObject = YouTube(link)
             if file_extension == "4":
-                print("Using MP4 format.")
+                print(f"Downloading {youtubeObject.title} in MP4 format...")
                 youtubeObject.streams.get_highest_resolution().download(output_path=output_path)
                 print("Download success in MP4 format.")
             elif file_extension == "3":
-                print("Using MP3 format.")
+                print(f"Downloading {youtubeObject.title} in MP3 format...")
                 audio_stream = youtubeObject.streams.filter(only_audio=True).first()
                 audio_stream.download(filename=f"{youtubeObject.title}.mp3", output_path=output_path)
-                print("Successfully downloaded in MP3 format.")
+                print(f"Successfully downloaded {youtubeObject.title} in MP3 format.")
             elif file_extension == "0":
-                print("Installing in both MP4 and MP3.")
-                print("Installing MP3...")
+                print(f"Downloading in both MP4 and MP3 formats...")
+                print(f"Downloading {youtubeObject.title} in MP3 format...")
                 audio_stream = youtubeObject.streams.filter(only_audio=True).first()
                 audio_stream.download(filename=f"{youtubeObject.title}.mp3", output_path=output_path)
-                print("Installing MP4...")
+                print(f"Downloading {youtubeObject.title} in MP4 format...")
                 video_stream = youtubeObject.streams.get_highest_resolution()
                 video_stream.download(output_path=output_path)
-                print("Successfully downloaded MP4 and MP3.")
+                print(f"Successfully downloaded {youtubeObject.title} in MP4 and MP3 formats.")
             else:
                 print("Invalid input, exiting.")
     except Exception as e:
