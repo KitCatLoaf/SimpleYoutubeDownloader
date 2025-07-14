@@ -6,8 +6,6 @@ window = Tk()
 window.geometry("800x500")
 window.title("Youtube Downloader")
 
-icon = PhotoImage(file='assets/japple.png')
-window.iconphoto(True, icon)
 window.config(background="gray")
 
 def getValues():
@@ -72,15 +70,14 @@ def downloadVideo(link, file_extension, output_path):
         print(f"Unexpected error: {e}")
         
 def download():
-    if __name__ == "__main__":
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        download_path = os.path.join(script_dir, "Downloaded_Files")
-        os.makedirs(download_path, exist_ok=True)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    download_path = os.path.join(script_dir, "Downloaded_Files")
+    os.makedirs(download_path, exist_ok=True)
 
-        ytLink = link.get()
-        fileExtension = getValues()
+    ytLink = link.get()
+    fileExtension = getValues()
 
-        downloadVideo(ytLink, str(fileExtension), download_path)
+    downloadVideo(ytLink, str(fileExtension), download_path)
 
 mp3Clicked = IntVar()
 mp4Clicked = IntVar()
@@ -96,4 +93,6 @@ link.pack()
 submit = Button(window, text="Download", command=download)
 submit.pack()
 
-window.mainloop()
+if __name__ == "__main__":
+    print("Downloader Additional Output: \n")
+    window.mainloop()
