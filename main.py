@@ -19,54 +19,74 @@ def getValues():
 def downloadVideo(link, file_extension, output_path):
     try:
         if "playlist" in link:
+            status.config(text="Downloading playlist...")
             print("Downloading playlist...")
             playlist = Playlist(link)
             for video_url in playlist.video_urls:
                 youtubeObject = YouTube(video_url)
                 if file_extension == "4":
-                    print(f"Downloading {youtubeObject.title} in MP4 format...")
+                    status.config(text=f"Downloading {youtubeObject.title} in MP4 format...")
+                    print("Downloading {youtubeObject.title} in MP4 format...")
                     youtubeObject.streams.get_highest_resolution().download(output_path=output_path)
+                    status.config(text=f"Successfully downloaded {youtubeObject.title} in MP4 format.")
                     print(f"Successfully downloaded {youtubeObject.title} in MP4 format.")
                 elif file_extension == "3":
+                    status.config(text=f"Downloading {youtubeObject.title} in MP3 format...")
                     print(f"Downloading {youtubeObject.title} in MP3 format...")
                     audio_stream = youtubeObject.streams.filter(only_audio=True).first()
                     audio_stream.download(filename=f"{youtubeObject.title}.mp3", output_path=output_path)
+                    status.config(text=f"Successfully downloaded {youtubeObject.title} in MP3 format.")
                     print(f"Successfully downloaded {youtubeObject.title} in MP3 format.")
                 elif file_extension == "0":
+                    status.config(text=f"Downloading {youtubeObject.title} in both MP4 and MP3 formats...")
                     print(f"Downloading {youtubeObject.title} in both MP4 and MP3 formats...")
-                    print(f"Downloading {youtubeObject.title} in MP3 format...")
+                    status.config(text=f"Downloading {youtubeObject.title} in MP3 format...")
+                    print("Downloading {youtubeObject.title} in MP3 format...")
                     audio_stream = youtubeObject.streams.filter(only_audio=True).first()
                     audio_stream.download(filename=f"{youtubeObject.title}.mp3", output_path=output_path)
+                    status.config(text=f"Downloading {youtubeObject.title} in MP4 format...")
                     print(f"Downloading {youtubeObject.title} in MP4 format...")
                     video_stream = youtubeObject.streams.get_highest_resolution()
                     video_stream.download(output_path=output_path)
+                    status.config(text=f"Successfully downloaded {youtubeObject.title} in both MP4 and MP3 formats.")
                     print(f"Successfully downloaded {youtubeObject.title} in both MP4 and MP3 formats.")
                 else:
+                    status.config(text="Invalid input, skipping video.")
                     print("Invalid input, skipping video.")
         else:
+            status.config(text="Downloading single video...")
             print("Downloading single video...")
             youtubeObject = YouTube(link)
             if file_extension == "4":
-                print(f"Downloading {youtubeObject.title} in MP4 format...")
+                status.config(text="Downloading {youtubeObject.title} in MP4 format...")
+                print("Downloading {youtubeObject.title} in MP4 format...")
                 youtubeObject.streams.get_highest_resolution().download(output_path=output_path)
+                status.config(text="Download success in MP4 format.")
                 print("Download success in MP4 format.")
             elif file_extension == "3":
+                status.config(text=f"Downloading {youtubeObject.title} in MP3 format...")
                 print(f"Downloading {youtubeObject.title} in MP3 format...")
                 audio_stream = youtubeObject.streams.filter(only_audio=True).first()
                 audio_stream.download(filename=f"{youtubeObject.title}.mp3", output_path=output_path)
+                status.config(f"Successfully downloaded {youtubeObject.title} in MP3 format.")
                 print(f"Successfully downloaded {youtubeObject.title} in MP3 format.")
             elif file_extension == "0":
+                status.config(text=f"Downloading in both MP4 and MP3 formats...")
                 print(f"Downloading in both MP4 and MP3 formats...")
-                print(f"Downloading {youtubeObject.title} in MP3 format...")
+                status.config(text=f"Downloading {youtubeObject.title} in MP3 format...")
                 audio_stream = youtubeObject.streams.filter(only_audio=True).first()
                 audio_stream.download(filename=f"{youtubeObject.title}.mp3", output_path=output_path)
+                status.config(text=f"Downloading {youtubeObject.title} in MP4 format...")
                 print(f"Downloading {youtubeObject.title} in MP4 format...")
                 video_stream = youtubeObject.streams.get_highest_resolution()
                 video_stream.download(output_path=output_path)
+                status.config(text=f"Successfully downloaded {youtubeObject.title} in MP4 and MP3 formats.")
                 print(f"Successfully downloaded {youtubeObject.title} in MP4 and MP3 formats.")
             else:
+                status.config(text="Invalid input, exiting.")
                 print("Invalid input, exiting.")
     except Exception as e:
+        status.config(text=f"Unexpected error: {e}")
         print(f"Unexpected error: {e}")
         
 def download():
@@ -92,6 +112,9 @@ link.pack()
 
 submit = Button(window, text="Download", command=download)
 submit.pack()
+
+status = Label(window, text="Waiting for status...")
+status.pack()
 
 if __name__ == "__main__":
     print("Downloader Additional Output: \n")
