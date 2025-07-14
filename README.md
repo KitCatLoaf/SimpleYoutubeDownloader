@@ -4,6 +4,7 @@ A very simple, lightweight, easy to use YouTube downloader that runs in your ter
 # DETAILS (READ)
 
 When you download a video the program will make a new file called "Downloaded_Files" in the root directory of main.py
+
 Put the code in a folder for additional organization if wanted.
 
 # How to use:
