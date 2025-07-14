@@ -9,9 +9,7 @@ Put the code in a folder for additional organization if wanted.
 
 # How to use:
 The program will create a new folder to store downloaded files, it will go in the program's root folder.
-1. Download Python (Check add to PATH box)
+1. Download Python (Windows - Check add to PATH box)
 2. Use "pip install pytubefix"
 3. Download all code as .zip (Code > Download)
 4. Run code and use through GUI as desired
-5. (OPTIONAL) run code in terminal for additional output
-6. (For step 5) Open terminal in directory of main.py and run Python3 main.py
