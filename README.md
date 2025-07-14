@@ -13,4 +13,4 @@ The program will create a new folder to store downloaded files, it will go in th
 2. Use "pip install pytubefix"
 4. Download all code as .zip (Code > Download)
 5. Run code and use through GUI as desired
-6. If needed - install tkinter with 'pip install tkinter'
+6. If needed - install tkinter with 'pip install tkinter' or on linux 'sudo apt-get install python3-tk' (may differ across distros, refer to documentation)
