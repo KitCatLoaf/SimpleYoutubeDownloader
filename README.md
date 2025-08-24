@@ -18,13 +18,14 @@ The program will create a new folder to store downloaded files, it will go in th
 4. Download all code as .zip (Code > Download)
 5. Extract zip file
 6. Run code (double click main.py) and use through GUI as desired
+7. Optional - Run with python (open command prompt, cd into directory of main.py and run "python3 main.py")
 
 # Linux:
 1. Download Python ('sudo apt install Python3' or equivalent command)
 2. Run 'sudo apt-get install python3-tk && pip install pytubefix' or equivalent command
 3. Download all code as .zip (Code > Download)
 4. Extract zip file
-5. Run code (cd into directory of main.py and run 'Python3 main.py')
+5. Run code (cd into directory of main.py and run 'python3 main.py')
 
 # MacOS
 You're going to have to find out how to run it on here on your own. I don't like MacOS.
