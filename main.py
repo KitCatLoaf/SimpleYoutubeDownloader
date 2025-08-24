@@ -26,7 +26,7 @@ def downloadVideo(link, file_extension, output_path):
                 youtubeObject = YouTube(video_url)
                 if file_extension == "4":
                     status.config(text=f"Downloading {youtubeObject.title} in MP4 format...")
-                    print("Downloading {youtubeObject.title} in MP4 format...")
+                    print(f"Downloading {youtubeObject.title} in MP4 format...")
                     youtubeObject.streams.get_highest_resolution().download(output_path=output_path)
                     status.config(text=f"Successfully downloaded {youtubeObject.title} in MP4 format.")
                     print(f"Successfully downloaded {youtubeObject.title} in MP4 format.")
@@ -118,4 +118,5 @@ status.pack()
 
 if __name__ == "__main__":
     print("Downloader Additional Output: \n")
+
     window.mainloop()
