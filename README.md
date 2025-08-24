@@ -31,5 +31,5 @@ The program will create a new folder to store downloaded files, it will go in th
 You're going to have to find out how to run it on here on your own. I don't like MacOS.
 
 Dependencies:
-tkinter (normally packaged with python)
+tkinter (normally packaged with python), 
 pytubefix
