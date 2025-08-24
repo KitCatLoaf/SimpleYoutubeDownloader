@@ -11,8 +11,24 @@ If you run in a terminal, additional output will be in the same terminal. Runnin
 
 # How to use:
 The program will create a new folder to store downloaded files, it will go in the program's root folder.
-1. Download Python (Windows - Check add to PATH box)
+
+# Windows:
+1. Download Python (Check add to PATH box)
 2. Use "pip install pytubefix"
 4. Download all code as .zip (Code > Download)
-5. Run code and use through GUI as desired (Linux - sometimes won't open on double click. Go into main.py directory in your terminal and run 'Python3 main.py')
-6. If needed - install tkinter with 'pip install tkinter' or on linux 'sudo apt-get install python3-tk' (may differ across distros, refer to documentation)
+5. Extract zip file
+6. Run code (double click main.py) and use through GUI as desired
+
+# Linux:
+1. Download Python ('sudo apt install Python3' or equivalent command)
+2. Run 'sudo apt-get install python3-tk && pip install pytubefix' or equivalent command
+3. Download all code as .zip (Code > Download)
+4. Extract zip file
+5. Run code (cd into directory of main.py and run 'Python3 main.py')
+
+# MacOS
+You're going to have to find out how to run it on here on your own. I don't like MacOS.
+
+Dependencies:
+tkinter (normally packaged with python)
+pytubefix
